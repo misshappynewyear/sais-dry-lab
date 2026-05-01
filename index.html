@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gene Hit Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Sai's Dry lab spreadsheet demo</p>
+        <h1>Gene Hit Explorer</h1>
+      </div>
+      <div class="header-actions">
+        <label class="toggle">
+          <input id="autoRefreshInput" type="checkbox" checked>
+          <span>Auto refresh</span>
+        </label>
+        <button id="refreshButton" class="secondary-button" type="button">Refresh data</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="summary-grid" aria-label="Gene hit summary">
+        <article class="metric">
+          <span class="metric-label">Significant hits</span>
+          <strong id="significantCount">0</strong>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Upregulated</span>
+          <strong id="upCount">0</strong>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Downregulated</span>
+          <strong id="downCount">0</strong>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Pathways</span>
+          <strong id="pathwayCount">0</strong>
+        </article>
+      </section>
+
+      <section class="controls" aria-label="Filters">
+        <label>
+          <span>Search gene</span>
+          <input id="searchInput" type="search" placeholder="BRCA1, TP53, IL6...">
+        </label>
+        <label>
+          <span>Condition</span>
+          <select id="conditionSelect">
+            <option value="all">All conditions</option>
+          </select>
+        </label>
+        <label>
+          <span>Pathway</span>
+          <select id="pathwaySelect">
+            <option value="all">All pathways</option>
+          </select>
+        </label>
+        <label>
+          <span>Status</span>
+          <select id="statusSelect">
+            <option value="all">All genes</option>
+            <option value="up">Upregulated</option>
+            <option value="down">Downregulated</option>
+            <option value="not-significant">Not significant</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="workspace">
+        <section class="panel table-panel" aria-label="Gene table">
+        <div class="panel-title">
+          <h2>Spreadsheet rows with computed labels</h2>
+          <p><span id="rowCount">0 rows</span> · <span id="lastLoaded">not loaded yet</span></p>
+        </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Gene</th>
+                  <th>Condition</th>
+                  <th>log2FC</th>
+                  <th>p-value</th>
+                  <th>Status</th>
+                  <th>Pathway</th>
+                </tr>
+              </thead>
+              <tbody id="geneTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <aside class="panel detail-panel" aria-label="Selected gene details">
+          <div class="panel-title">
+            <h2 id="selectedGene">Select a gene</h2>
+            <p id="selectedDescription">Click any row to inspect it.</p>
+          </div>
+          <div id="expressionBar" class="expression-bar" aria-label="Fold change chart"></div>
+          <dl class="detail-list">
+            <div>
+              <dt>Condition</dt>
+              <dd id="detailCondition">-</dd>
+            </div>
+            <div>
+              <dt>Pathway</dt>
+              <dd id="detailPathway">-</dd>
+            </div>
+            <div>
+              <dt>Base mean</dt>
+              <dd id="detailBaseMean">-</dd>
+            </div>
+            <div>
+              <dt>Notes</dt>
+              <dd id="detailNotes">-</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="panel pathway-panel" aria-label="Pathway summary">
+        <div class="panel-title">
+          <h2>Pathway signal</h2>
+          <p>Ranked by significant genes</p>
+        </div>
+        <div id="pathwayBars" class="pathway-bars"></div>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

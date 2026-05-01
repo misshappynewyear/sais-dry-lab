@@ -1,0 +1,25 @@
+gene,condition,log2FoldChange,pValue,baseMean,pathway,description,notes
+BRCA1,drug_a,1.84,0.0008,842,DNA repair,Breast cancer type 1 susceptibility protein,Strong increase after treatment
+TP53,drug_a,-1.31,0.0061,516,Cell cycle,Tumor protein p53,Suppressed in treated cells
+MYC,drug_a,2.43,0.0002,1204,Transcription regulation,MYC proto-oncogene,Top upregulated candidate
+EGFR,drug_a,0.42,0.18,683,RTK signaling,Epidermal growth factor receptor,Expression change is small
+KRAS,drug_a,0.91,0.031,334,MAPK signaling,KRAS proto-oncogene,Borderline fold change
+PTEN,drug_a,-1.72,0.0027,289,PI3K signaling,Phosphatase and tensin homolog,Loss-like expression pattern
+CDKN1A,drug_a,1.22,0.014,419,Cell cycle,Cyclin dependent kinase inhibitor 1A,Moderate induction
+GATA3,drug_a,-0.64,0.071,198,Transcription regulation,GATA binding protein 3,Trend but not significant
+ESR1,drug_b,-2.08,0.0004,917,Hormone signaling,Estrogen receptor 1,Strong downregulation
+FOXA1,drug_b,-1.11,0.021,642,Transcription regulation,Forkhead box A1,Regulator of estrogen response
+ERBB2,drug_b,1.67,0.0095,453,RTK signaling,Erb-b2 receptor tyrosine kinase 2,Potential resistance marker
+AKT1,drug_b,0.76,0.044,377,PI3K signaling,AKT serine/threonine kinase 1,Significant but modest effect
+MTOR,drug_b,0.35,0.23,264,PI3K signaling,Mechanistic target of rapamycin,No clear expression shift
+BCL2,drug_b,-1.46,0.0078,391,Apoptosis,BCL2 apoptosis regulator,Lower survival signaling
+CASP3,drug_b,1.53,0.0033,251,Apoptosis,Caspase 3,Apoptosis marker increased
+STAT3,drug_b,0.88,0.061,307,JAK-STAT signaling,Signal transducer and activator of transcription 3,Watch list gene
+JAK2,drug_c,1.37,0.012,287,JAK-STAT signaling,Janus kinase 2,Clear pathway activation
+IL6,drug_c,2.91,0.0001,755,Cytokine signaling,Interleukin 6,Highest fold change in set
+TNF,drug_c,2.12,0.0014,689,Cytokine signaling,Tumor necrosis factor,Inflammatory response marker
+NFKB1,drug_c,1.04,0.028,531,NF-kB signaling,Nuclear factor kappa B subunit 1,Meets significance threshold
+RELA,drug_c,0.69,0.039,426,NF-kB signaling,RELA proto-oncogene,Significant but below strong FC threshold
+CXCL8,drug_c,3.22,0.00005,998,Cytokine signaling,C-X-C motif chemokine ligand 8,Very strong induction
+IFNG,drug_c,1.95,0.0042,214,Immune response,Interferon gamma,Immune activation signal
+CD274,drug_c,1.26,0.019,182,Immune checkpoint,Programmed death-ligand 1,Potential checkpoint response
